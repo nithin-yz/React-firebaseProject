@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useFormik } from 'formik';
+import totalxpic from "./../assets/images/cropped-WhatsApp-Image-2023-05-20-at-11.37 1-1.png"
+import loginpic from "./../assets/images/Frame 4.png"
 import * as Yup from 'yup';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 // import { AppDispatch, RootState } from '../store/store';
 // import { requestOTP, verifyOTP } from '../store/slices/authSlice';
 import toast from 'react-hot-toast';
 
 const Login = () => {
   const [showOTP, setShowOTP] = useState(false);
-  const dispatch = useDispatch<AppDispatch>();
-  const navigate = useNavigate();
-  const { loading, verificationId } = useSelector((state: RootState) => state.auth);
+//   const dispatch = useDispatch<AppDispatch>();
+//   const navigate = useNavigate();
+//   const { loading, verificationId } = useSelector((state: RootState) => state.auth);
 
   const phoneFormik = useFormik({
     initialValues: {
@@ -24,7 +26,7 @@ const Login = () => {
     }),
     onSubmit: async (values) => {
       try {
-        await dispatch(requestOTP('+91' + values.phone)).unwrap();
+        // await dispatch(requestOTP('+91' + values.phone)).unwrap();
         setShowOTP(true);
         toast.success('OTP sent successfully!');
       } catch (err) {
@@ -55,14 +57,14 @@ const Login = () => {
   });
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex ">
       {/* Left Section */}
-      <div className="w-1/2 p-8 flex flex-col">
-        <div className="mb-12">
-          <img src="/logo.svg" alt="TotalX" className="h-12 w-12" />
+      <div className="w-1/2 p-6 flex flex-col gap-y-10 items-center ">
+        <div className="mb-10 mt-10 mr-28 ">
+          <img src={totalxpic} alt="TotalX" className="h-18 w-18" />
         </div>
         
-        <div className="max-w-md w-full mx-auto">
+        <div className="max-w-md w-full mx-auto ml-[280px] mt-[20px]">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">Login</h1>
           <p className="text-gray-600 mb-8">Login to access your travelwise account</p>
 
@@ -86,10 +88,10 @@ const Login = () => {
 
             <button
               type="submit"
-              disabled={loading}
+            //   disabled={loading}
               className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors"
             >
-              {loading ? 'Sending OTP...' : 'Get OTP'}
+              {/* {loading ? 'Sending OTP...' : 'Get OTP'} */}
             </button>
           </form>
 
@@ -103,9 +105,9 @@ const Login = () => {
       </div>
 
       {/* Right Section - Illustration */}
-      <div className="w-1/2 bg-gray-50 flex items-center justify-center p-8">
+      <div className="w-1/2  flex items-center justify-center p-8">
         <img
-          src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+          src={loginpic}
           alt="Security Illustration"
           className="max-w-md w-full object-contain"
         />

@@ -1,6 +1,8 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useFormik } from 'formik';
+import totalxpic from "./../assets/images/cropped-WhatsApp-Image-2023-05-20-at-11.37 1-1.png"
+import bannerpic from "./../assets/images/Rectangle 20-2.png"
 import * as Yup from 'yup';
 import toast from 'react-hot-toast';
 
@@ -42,18 +44,18 @@ const Signup = () => {
   return (
     <div className="min-h-screen flex">
       {/* Left Section - Illustration */}
-      <div className="w-1/2 bg-gray-50 flex items-center justify-center p-8">
+      <div className="w-1/2 flex items-center justify-center p-8">
         <img
-          src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+          src={bannerpic}
           alt="Registration Illustration"
-          className="max-w-md w-full object-contain"
+          className="max-w-md w-full h-5/6 object-contain"
         />
       </div>
 
       {/* Right Section */}
-      <div className="w-1/2 p-8 flex flex-col">
+      <div className="md:w-1/3 sm:md-1/2 p-8 flex flex-col">
         <div className="mb-12 flex justify-end">
-          <img src="/logo.svg" alt="TotalX" className="h-12 w-12" />
+          <img src={totalxpic} alt="TotalX" className="h-18 w-18 mr-1" />
         </div>
         
         <div className="max-w-md w-full mx-auto">

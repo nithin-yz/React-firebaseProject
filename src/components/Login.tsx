@@ -3,8 +3,8 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '../store/store';
-import { requestOTP, verifyOTP } from '../store/slices/authSlice';
+// import { AppDispatch, RootState } from '../store/store';
+// import { requestOTP, verifyOTP } from '../store/slices/authSlice';
 import toast from 'react-hot-toast';
 
 const Login = () => {
